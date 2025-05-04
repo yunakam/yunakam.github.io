@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,14 +19,20 @@
             position: fixed;
             width: 100%;
             top: 0;
-            right: 10;
+            box-sizing: border-box;
+        }
+        header .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: flex-end;
             align-items: center;
         }
         header h1 {
+            color: #F7FBF9;
             margin: 0;
             font-size: 1.5em;
+            font-family: 'Merriweather', sans-serif;
             padding-right: 20px;
         }
         header img {
@@ -33,9 +40,34 @@
             height: 30px;
             margin-left: 10px;
         }
+        .language-switch {
+            margin-right: auto;
+        }
+        
+        .language-switch button {
+            background-color: #2B5949;
+            color: #F7FBF9;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+        
+        .language-switch button:hover {
+            background-color: #3E3542;
+        }
+        .language-switch button:focus {
+            outline: none;
+        }
+        .language-switch button.active {
+            background-color: #FB7540;
+            color: #fff;
+        }
+
         .container {
             max-width: 1200px;
-            margin: 30px auto 20px;
+            margin: 60px auto 20px;
             padding: 20px;
         }
         .grid {
@@ -53,7 +85,7 @@
             color: #555;
             font-size: 0.8em;
             height: 40px;
-            overflow: clip;
+            overflow: hidden;
         }
         h1 {
             color: #3E3542;
@@ -62,6 +94,7 @@
         h2 {
             color: #3E3542;
             font-size: 1.2em;
+            font-family: 'Montserrat', sans-serif;
         }
         h3 {
             color: #3E3542;
@@ -78,41 +111,42 @@
 </head>
 <body>
     <header>
-        <h1>Portfolio</h1>
-        <img src="icon.jpeg" alt="Icon">
+        <div class="header-content">
+            <div class="language-switch">
+                <button id="en" onclick="switchLanguage('en')">EN</button>
+                <button id="ja" onclick="switchLanguage('ja')">JA</button>
+            </div>
+            <h1>Portfolio</h1>
+            <a href="https://github.com/yonakam" target="_blank">
+                <img src="icon.png" alt="Jump to GitHub">
+            </a>
+        </div>
     </header>
+
+    
     <div class="container">
         <h1>Android apps</h1>
         <div class="grid">
             <div class="card">
                 <h2>Dietary Calculator</h2>
-                <div class="description">calculates your daily target of various nutrients.</div>
-                <video width="100%" controls>
-                    <source src="https://github.com/yunakam/dietary_calculator/blob/master/dietary_calculator_demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="description">Calculates your daily target of various nutrients.</div>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/4mR3Hf1Vy9U" frameborder="0" allowfullscreen></iframe>
                 <p><h3><a href="https://github.com/yunakam/dietary_calculator" target="_blank">View Repository</a></h3></p>
             </div>
 
             <div class="card">
                 <h2>Yomou</h2>
-                <div class="description">helps you read books by the target date</div>
-                <video width="100%" controls>
-                    <source src="https://github.com/yunakam/yomou/blob/master/yomou_demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="description">Helps you read books by the target date.</div>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/iDwYGWEvc2s" frameborder="0" allowfullscreen></iframe>
                 <p><h3><a href="https://github.com/yunakam/yomou" target="_blank">View Repository</a></h3></p>
-                </div>
+            </div>
 
             <div class="card">
-                <h2>Multi-lingual translator</h2>
-                <div class="description">translates text into 1-4 different languages of your choice</div>
-                <video width="100%" controls>
-                    <source src="https://github.com/yunakam/polygloo/blob/master/polygloo_demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <h2>Multi-lingual Translator</h2>
+                <div class="description">Translates text into 1-4 different languages of your choice.</div>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/3Gk2kMy2-Ok" frameborder="0" allowfullscreen></iframe>
                 <p><h3><a href="https://github.com/yunakam/polygloo" target="_blank">View Repository</a></h3></p>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -120,16 +154,47 @@
         <h1>Deep Learning projects</h1>
         <div class="grid">
             <div class="card">
-                <h2>Music genre classification</h2>
-                <div class="description">model using </div>
-                <video width="100%" controls>
-                    <source src="deep_learning/preview.png" type="image">
-                    Your browser does not support the video tag.
-                </video>
+                <h2>Music Genre Classification</h2>
+                <div class="description">Model using deep learning techniques.</div>
+                <!-- Placeholder for video or image -->
+                <img src="deep_learning/preview.png" alt="Preview" width="100%">
                 <p><h3><a href="https://github.com/yunakam/music_genre_classification" target="_blank">View Repository</a></h3></p>
             </div>
-
         </div>
     </div>
+    
+    <script>
+        const content = {
+            en: {
+                androidApps: "Android Apps using Python flet",
+                dietaryCalculator: "Calculates your daily target of various nutrients.",
+                yomou: "Helps you read books by the target date.",
+                multiLingualTranslator: "Translates text into 1-4 different languages of your choice.",
+                deepLearningProjects: "Deep Learning Projects",
+                musicGenreClassification: "Classification model with GRU and 1D convolutional layer"
+            },
+            ja: {
+                androidApps: "Python fletを利用したAndroidアプリ",
+                dietaryCalculator: "毎日の栄養素摂取目標値を計算",
+                yomou: "読書計画をサポート",
+                multiLingualTranslator: "選択した複数言語にテキストを一括翻訳",
+                deepLearningProjects: "深層学習プロジェクト",
+                musicGenreClassification: "GRUと1次元畳み込みを利用した楽曲分類モデルの構築"
+            }
+        };
+
+        function switchLanguage(lang) {
+            document.querySelector('.container h1').innerText = content[lang].androidApps;
+            document.querySelectorAll('.card .description')[0].innerText = content[lang].dietaryCalculator;
+            document.querySelectorAll('.card .description')[1].innerText = content[lang].yomou;
+            document.querySelectorAll('.card .description')[2].innerText = content[lang].multiLingualTranslator;
+            document.querySelectorAll('.container h1')[1].innerText = content[lang].deepLearningProjects;
+            document.querySelectorAll('.card .description')[3].innerText = content[lang].musicGenreClassification;
+        }
+
+        // Default language
+        switchLanguage('en');
+    </script>
+
 </body>
 </html>
