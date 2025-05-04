@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7FBF9;
+        }
+        header {
+            background-color: #2B5949;
+            color: #F7FBF9;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 10;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            padding-right: 20px;
+        }
+        header img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto 20px;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        .description {
+            color: #555;
+            font-size: 0.8em;
+            height: 40px;
+            overflow: clip;
+        }
+        h1 {
+            color: #3E3542;
+            font-size: 1em;
+        }        
+        h2 {
+            color: #3E3542;
+            font-size: 1.2em;
+        }
+        h3 {
+            color: #3E3542;
+            font-size: 0.8em;
+        }
+        a {
+            color: #FB7540;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <img src="icon.jpeg" alt="Icon">
+    </header>
+    <div class="container">
+        <h1>Android apps</h1>
+        <div class="grid">
+            <div class="card">
+                <h2>Dietary Calculator</h2>
+                <div class="description">calculates your daily target of various nutrients.</div>
+                <video width="100%" controls>
+                    <source src="https://github.com/yunakam/dietary_calculator/blob/master/dietary_calculator_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p><h3><a href="https://github.com/yunakam/dietary_calculator" target="_blank">View Repository</a></h3></p>
+            </div>
+
+            <div class="card">
+                <h2>Yomou</h2>
+                <div class="description">helps you read books by the target date</div>
+                <video width="100%" controls>
+                    <source src="https://github.com/yunakam/yomou/blob/master/yomou_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p><h3><a href="https://github.com/yunakam/yomou" target="_blank">View Repository</a></h3></p>
+                </div>
+
+            <div class="card">
+                <h2>Multi-lingual translator</h2>
+                <div class="description">translates text into 1-4 different languages of your choice</div>
+                <video width="100%" controls>
+                    <source src="https://github.com/yunakam/polygloo/blob/master/polygloo_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p><h3><a href="https://github.com/yunakam/polygloo" target="_blank">View Repository</a></h3></p>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Deep Learning projects</h1>
+        <div class="grid">
+            <div class="card">
+                <h2>Music genre classification</h2>
+                <div class="description">model using </div>
+                <video width="100%" controls>
+                    <source src="deep_learning/preview.png" type="image">
+                    Your browser does not support the video tag.
+                </video>
+                <p><h3><a href="https://github.com/yunakam/music_genre_classification" target="_blank">View Repository</a></h3></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
