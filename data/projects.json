@@ -1,0 +1,61 @@
+[
+  {
+    "category": "android",
+    "title": "Dietary Calculator",
+    "slug": "dietary-calculator",
+    "description": {
+      "en": "Calculates your daily target of various nutrients.",
+      "ja": "毎日の栄養素摂取目標値を計算"
+    },
+    "media": { "type": "youtube", "id": "4mR3Hf1Vy9U" },
+    "links": {
+      "repo": "https://github.com/yunakam/dietary_calculator"
+    }
+  },
+  {
+    "category": "android",
+    "title": "Yomou",
+    "slug": "yomou",
+    "description": {
+      "en": "Helps you read books by the target date.",
+      "ja": "読書計画をサポート"
+    },
+    "media": { "type": "youtube", "id": "iDwYGWEvc2s" },
+    "links": {
+      "repo": "https://github.com/yunakam/yomou"
+    }
+  },
+  {
+    "category": "android",
+    "title": "Multi-lingual Translator",
+    "slug": "multi-lingual-translator",
+    "description": {
+      "en": "Translates text into 1–4 different languages of your choice.",
+      "ja": "選択した複数言語にテキストを一括翻訳"
+    },
+    "media": { "type": "youtube", "id": "3Gk2kMy2-Ok" },
+    "links": {
+      "repo": "https://github.com/yunakam/polygloo"
+    }
+  },
+  {
+    "category": "deep-learning",
+    "title": "Music Genre Classification",
+    "slug": "music-genre-classification",
+    "description": {
+      "en": "Classification model with GRU and 1D convolutional layer.",
+      "ja": "GRUと1次元畳み込みを利用した楽曲分類モデルの構築"
+    },
+    "media": {
+      "type": "image",
+      "src": "assets/images/deep_learning_preview.png",
+      "alt": {
+        "en": "Spectrogram-based music genre classification preview",
+        "ja": "スペクトログラムによる音楽ジャンル分類のプレビュー"
+      }
+    },
+    "links": {
+      "repo": "https://github.com/yunakam/music_genre_classification"
+    }
+  }
+]

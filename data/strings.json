@@ -1,0 +1,24 @@
+{
+  "en": {
+    "githubAlt": "Jump to GitHub",
+    "sections": {
+      "android": "Android Apps using Python flet",
+      "deep-learning": "Deep Learning Projects"
+    },
+    "labels": {
+      "live": "Live",
+      "code": "View Repository"
+    }
+  },
+  "ja": {
+    "githubAlt": "GitHubへ移動",
+    "sections": {
+      "android": "Python fletを利用したAndroidアプリ",
+      "deep-learning": "深層学習プロジェクト"
+    },
+    "labels": {
+      "live": "デモ",
+      "code": "View Repository"
+    }
+  }
+}
