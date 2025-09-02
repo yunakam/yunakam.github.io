@@ -3,7 +3,7 @@
     "githubAlt": "Jump to GitHub",
     "sections": {
       "android-flet": "Android Apps with Python flet",
-      "android-django": "Android Apps with Django/Next.js",
+      "web-django": "Web Apps with Django/Next.js",
       "android-kotlin": "Android Apps written in Kotlin",
       "line": "Apps connected to LINE (chat application)",
       "deep-learning": "Deep Learning Projects"
@@ -17,7 +17,7 @@
     "githubAlt": "GitHubへ移動",
     "sections": {
       "android-flet": "Androidアプリ（Python flet利用）",
-      "android-django": "Androidアプリ（Django/Next.js）",
+      "web-django": "ウェブアプリ（Django/Next.js）",
       "android-kotlin": "Androidアプリ（Kotlin）",
       "line": "LINE連携アプリ",
       "deep-learning": "深層学習プロジェクト"

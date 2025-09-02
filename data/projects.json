@@ -40,7 +40,7 @@
   },
 
   {
-    "category": "android-django",
+    "category": "web-django",
     "title": "News Summarizer",
     "slug": "news-summarizer",
     "description": {

@@ -95,12 +95,12 @@
         return m;
       }, {});
 
-      // order: android first if present, then the rest alphabetically
+      // order by category
       const categories = Object.keys(byCat).sort((a, b) => {
          // preferred order when both exist
         const pref = [
         "android-flet", 
-        "android-django", 
+        "web-django", 
         "android-kotlin",
         "line",
         "deep-learning"
