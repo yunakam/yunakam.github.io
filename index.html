@@ -97,7 +97,14 @@
 
       // order: android first if present, then the rest alphabetically
       const categories = Object.keys(byCat).sort((a, b) => {
-        const pref = ["android", "deep-learning"]; // preferred order when both exist
+         // preferred order when both exist
+        const pref = [
+        "android-flet", 
+        "android-django", 
+        "android-kotlin",
+        "line",
+        "deep-learning"
+        ];
         const ia = pref.indexOf(a), ib = pref.indexOf(b);
         if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
         return a.localeCompare(b);

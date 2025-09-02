@@ -1,6 +1,6 @@
 [
   {
-    "category": "android",
+    "category": "android-flet",
     "title": "Dietary Calculator",
     "slug": "dietary-calculator",
     "description": {
@@ -13,7 +13,7 @@
     }
   },
   {
-    "category": "android",
+    "category": "android-flet",
     "title": "Yomou",
     "slug": "yomou",
     "description": {
@@ -26,7 +26,7 @@
     }
   },
   {
-    "category": "android",
+    "category": "android-flet",
     "title": "Multi-lingual Translator",
     "slug": "multi-lingual-translator",
     "description": {
@@ -38,6 +38,35 @@
       "repo": "https://github.com/yunakam/polygloo"
     }
   },
+
+  {
+    "category": "android-django",
+    "title": "News Summarizer",
+    "slug": "news-summarizer",
+    "description": {
+      "en": "Summarize an entered / extracted news article in the chosen language",
+      "ja": "入力/抽出したニュース記事を好きな言語に要約"
+    },
+    "media": { "type": "youtube", "id": "CIh3eEZ6Zbw" },
+    "links": {
+      "repo": "https://github.com/yunakam/news-summarizer"
+    }
+  },
+
+  {
+    "category": "line",
+    "title": "Event Bot",
+    "slug": "line-event-bot",
+    "description": {
+      "en": "Event creation / management bot used in LINE talks",
+      "ja": "LINEトーク内で使えるイベント作成/管理ボット"
+    },
+    "media": { "type": "youtube", "id": "k15nBefIyos" },
+    "links": {
+      "repo": "https://github.com/yunakam/line_eventbot"
+    }
+  },
+
   {
     "category": "deep-learning",
     "title": "Music Genre Classification",
