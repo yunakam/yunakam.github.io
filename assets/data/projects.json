@@ -1,0 +1,174 @@
+[
+  {
+    "category": "web-django",
+    "title": "News Summarizer",
+    "slug": "news-summarizer",
+    "description": {
+      "en": "Summarize an entered / extracted news article in the chosen language",
+      "ja": "入力/抽出したニュース記事を好きな言語に要約"
+    },
+    "media": { "type": "youtube", "id": "CIh3eEZ6Zbw" },
+    "links": {
+      "repo": "https://github.com/yunakam/news-summarizer"
+    }
+  },
+
+  {
+    "category": "android-kotlin",
+    "title": "Multi-lingual Translator (v2)",
+    "slug": "multi-lingual-translator",
+    "description": {
+      "en": "Translates text into multiple languages of your choice.",
+      "ja": "選択した複数言語にテキストを一括翻訳"
+    },
+    "media": { "type": "youtube", "id": "xiIfQOlwI3M" },
+    "links": {
+      "readme": {
+        "en": "../../docs/dietary-calculator/README_en.md",
+        "ja": "../../docs/dietary-calculator/README_ja.md"
+      }
+    }
+  },
+  {
+    "category": "android-kotlin",
+    "title": "Stamp Calculator",
+    "slug": "stamp-calculator",
+    "description": {
+      "en": "Calculates combinations of stamps to reach the required amount",
+      "ja": "入力された必要な金額に到達するよう、手持ちの切手から組み合わせを提案"
+    },
+    "media": { "type": "youtube", "id": "2pB8I_kcDR4" },
+    "links": {
+      "readme": {
+        "en": "../../docs/stamp-calculator/README_en.md",
+        "ja": "../../docs/stamp-calculator/README_ja.md"
+      }
+    }
+  },
+  {
+    "category": "android-kotlin",
+    "title": "Note Manager",
+    "slug": "note-manager",
+    "description": {
+      "en": "Manages notes by source media and promotes retention with multiple sorting functions",
+      "ja": "ソース媒体ごとにノートを管理し、複数のソート機能でメモ内容の定着を促進"
+    },
+    "media": { "type": "youtube", "id": "crHOj9WYVDY" },
+    "links": {
+      "readme": {
+        "en": "../../docs/time-capsule/README_en.md",
+        "ja": "../../docs/time-capsule/README_ja.md"
+      }
+    }
+  },
+
+  {
+    "category": "android-flet",
+    "title": "Dietary Calculator",
+    "slug": "dietary-calculator",
+    "description": {
+      "en": "Calculates your daily target of various nutrients.",
+      "ja": "毎日の栄養素摂取目標値を計算"
+    },
+    "media": { "type": "youtube", "id": "4mR3Hf1Vy9U" },
+    "links": {
+      "repo": "https://github.com/yunakam/dietary_calculator"
+    }
+  },
+
+  {
+    "category": "android-flet",
+    "title": "Yomou",
+    "slug": "yomou",
+    "description": {
+      "en": "Helps you read books by the target date.",
+      "ja": "読書計画をサポート"
+    },
+    "media": { "type": "youtube", "id": "iDwYGWEvc2s" },
+    "links": {
+      "repo": "https://github.com/yunakam/yomou"
+    }
+  },
+  {
+    "category": "android-flet",
+    "title": "Multi-lingual Translator (v1)",
+    "slug": "multi-lingual-translator",
+    "description": {
+      "en": "Translates text into 1–4 different languages of your choice.",
+      "ja": "選択した複数言語にテキストを一括翻訳"
+    },
+    "media": { "type": "youtube", "id": "3Gk2kMy2-Ok" },
+    "links": {
+      "repo": "https://github.com/yunakam/polygloo"
+    }
+  },
+
+  {
+    "category": "line",
+    "title": "Event Bot",
+    "slug": "line-event-bot",
+    "description": {
+      "en": "Event creation / management bot used in LINE talks",
+      "ja": "LINEトーク内で使えるイベント作成/管理ボット"
+    },
+    "media": { "type": "youtube", "id": "k15nBefIyos" },
+    "links": {
+      "repo": "https://github.com/yunakam/line_eventbot"
+    }
+  },
+
+  {
+    "category": "deep-learning",
+    "title": "Music Genre Classification",
+    "slug": "music-genre-classification",
+    "description": {
+      "en": "Classification model with GRU and 1D convolutional layer.",
+      "ja": "GRUと1次元畳み込みを利用した楽曲分類モデルの構築"
+    },
+    "media": {
+      "type": "image",
+      "src": "assets/images/deep_learning_preview.png",
+      "alt": {
+        "en": "Spectrogram-based music genre classification preview",
+        "ja": "スペクトログラムによる音楽ジャンル分類のプレビュー"
+      }
+    },
+    "links": {
+      "repo": "https://github.com/yunakam/music_genre_classification"
+    }
+  },
+
+  {
+    "category": "others",
+    "title": "F5-TTS Multi-Speaker Synthesis",
+    "slug": "f5-tts-multi-speaker",
+    "description": {
+      "en": "Generates speech from text using the F5-TTS model. Implements speaker-specific voice assignment and pause insertion.",
+      "ja": "スクリプトをF5-TTSモデルで音声変換。<br>話者別音声割り当て・ポーズ挿入を実装"
+    },
+    "tags": ["F5-TTS", "TTS", "Audio Generation", "NLP", "Kaggle"],
+    "media": {
+      "type": "audio_demo",
+      "samples": [
+        {
+          "label": {
+            "en": "Two men talking in turns",
+            "ja": "2人の会話"
+          },
+          "url": "https://github.com/yunakam/audio-book/raw/main/samples/sample1.mp3"
+        },
+        {
+          "label": {
+            "en": "Four persons talking in turns",
+            "ja": "4人の会話"
+          },
+          "url": "https://github.com/yunakam/audio-book/raw/main/samples/sample2.mp3"
+        }
+      ]
+    },
+    "links": {
+      "notebook": "https://www.kaggle.com/code/yunakam907/public-f5-tts-multi-speaker-audio-synthesis",
+      "readme": "https://github.com/yunakam/audio-book/blob/main/README.md"
+    }
+  }
+]

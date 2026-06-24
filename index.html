@@ -1,196 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+<!doctype html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
 
-  <!-- Fonts (keep in head) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Your stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <header>
-    <div class="header-content">
-      <div class="language-switch" aria-label="Language switch">
-        <button data-lang="en" aria-pressed="true">ENGLISH</button>
-        <button data-lang="ja" aria-pressed="false">日本語</button>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav-inner">
+          <div class="nav-logo">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            <span>Portfolio</span>
+          </div>
+          <div class="nav-right">
+            <button
+              class="lang-btn active"
+              id="btn-en"
+              onclick="setLang('en')"
+              aria-label="English"
+            >
+              EN
+            </button>
+            <button
+              class="lang-btn"
+              id="btn-ja"
+              onclick="setLang('ja')"
+              aria-label="日本語"
+            >
+              JA
+            </button>
+            <button
+              class="theme-btn"
+              data-theme-toggle
+              aria-label="ダークモード切り替え"
+            >
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path
+                  d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
       </div>
-      <h1 id="site-title">Portfolio</h1>
-      <a href="https://github.com/yunakam" target="_blank" rel="noopener">
-        <img src="icon.png" alt="Jump to GitHub">
-      </a>
-    </div>
-  </header>
+    </header>
 
-  <!-- Everything below is rendered by JS; make sure there is no extra static section after this -->
-  <main id="app"></main>
+    <!-- ── Main ── -->
+    <main id="main-content">
+      <div class="container" id="projects-root"></div>
+    </main>
 
-  <script>
-    // ---------- data/state ----------
-    let STRINGS = {};
-    let PROJECTS = [];
-    let currentLang = "en";
+    <footer class="site-footer">
+      <span data-i18n="footer">Built with HTML · CSS · JavaScript</span>
+    </footer>
 
-    const $ = (s, r=document) => r.querySelector(s);
-    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
-
-    // ---------- boot ----------
-    async function boot() {
-      try {
-        // Use RELATIVE paths so it works locally and on GH Pages
-        const [stringsRes, projectsRes] = await Promise.all([
-          fetch("data/strings.json"),
-          fetch("data/projects.json"),
-        ]);
-        if (!stringsRes.ok || !projectsRes.ok) throw new Error("Data files not found");
-        STRINGS = await stringsRes.json();
-        PROJECTS = await projectsRes.json();
-
-        const urlLang = new URLSearchParams(location.search).get("lang");
-        const saved = localStorage.getItem("lang");
-        const browserDefault = (navigator.language || "en").startsWith("ja") ? "ja" : "en";
-        currentLang = urlLang || saved || browserDefault;
-        setLang(currentLang);
-
-        // language buttons
-        $$(".language-switch button").forEach(btn => {
-          btn.addEventListener("click", () => setLang(btn.dataset.lang));
-        });
-      } catch (e) {
-        console.error(e);
-        $("#app").innerHTML =
-          '<p style="padding:1rem;background:#fee;border:1px solid #f99">Could not load data/strings.json or data/projects.json. Run a local server or check file paths.</p>';
-      }
-    }
-
-    function setLang(lang) {
-      currentLang = STRINGS[lang] ? lang : "en";
-      localStorage.setItem("lang", currentLang);
-      document.documentElement.lang = currentLang;
-
-      // header text
-      $("#site-title").textContent = "Portfolio";   
-      const gh = $("header img");
-      if (gh) gh.alt = STRINGS[currentLang].githubAlt || "Jump to GitHub";
-
-      // pressed state
-      $$(".language-switch button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === currentLang)));
-
-      render();
-    }
-
-    // ---------- render ----------
-    function render() {
-      const app = $("#app");
-      app.innerHTML = "";
-
-      // group projects by category
-      const byCat = PROJECTS.reduce((m, p) => {
-        (m[p.category] ||= []).push(p);
-        return m;
-      }, {});
-
-      // order by category
-      const categories = Object.keys(byCat).sort((a, b) => {
-         // preferred order when both exist
-        const pref = [
-        "android-flet", 
-        "web-django", 
-        "android-kotlin",
-        "line",
-        "deep-learning"
-        ];
-        const ia = pref.indexOf(a), ib = pref.indexOf(b);
-        if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
-        return a.localeCompare(b);
-      });
-
-      for (const cat of categories) {
-        const section = document.createElement("section");
-
-        const h2 = document.createElement("h2");
-        h2.className = "section-title";
-        h2.textContent = (STRINGS[currentLang]?.sections?.[cat]) || cat;
-        section.appendChild(h2);
-
-        const grid = document.createElement("div");
-        grid.className = "grid";            // <-- ensures same 3-column layout for every category
-        byCat[cat].forEach(p => grid.appendChild(card(p)));
-        section.appendChild(grid);
-
-        app.appendChild(section);
-      }
-    }
-
-    function card(p) {
-      const el = document.createElement("article");
-      el.className = "card";
-      el.setAttribute("itemscope", "");
-      el.setAttribute("itemtype", "https://schema.org/CreativeWork");
-      el.dataset.slug = p.slug || "";
-
-      const title = document.createElement("h3");
-      title.textContent = p.title || "";
-      title.setAttribute("itemprop", "name");
-      el.appendChild(title);
-
-      const desc = document.createElement("div");
-      desc.className = "description";
-      desc.setAttribute("itemprop", "description");
-      desc.textContent = (p.description && (p.description[currentLang] || p.description.en)) || "";
-      el.appendChild(desc);
-
-      // media (uniform height for both iframe & img)
-      const mediaWrap = document.createElement("div");
-      mediaWrap.className = "thumb";
-      if (p.media?.type === "youtube" && p.media.id) {
-        const iframe = document.createElement("iframe");
-        iframe.width = "100%";
-        iframe.height = "200";
-        iframe.src = `https://www.youtube.com/embed/${p.media.id}`;
-        iframe.title = `${p.title} demo`;
-        iframe.loading = "lazy";
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
-        iframe.setAttribute("allowfullscreen", "");
-        mediaWrap.appendChild(iframe);
-      } else if (p.media?.type === "image" && p.media.src) {
-        const img = document.createElement("img");
-        img.src = p.media.src;
-        img.alt = p.media.alt?.[currentLang] || p.media.alt?.en || p.title || "";
-        img.loading = "lazy";
-        img.style.width = "100%";
-        img.style.height = "200px";
-        img.style.objectFit = "cover";   // <-- keep same visual size as the YouTube iframes
-        mediaWrap.appendChild(img);
-      }
-      el.appendChild(mediaWrap);
-
-      const links = document.createElement("div");
-      links.className = "links";
-      if (p.links?.live) {
-        const a = document.createElement("a");
-        a.href = p.links.live; a.target = "_blank"; a.rel = "noopener";
-        a.textContent = STRINGS[currentLang]?.labels?.live || "Live";
-        links.appendChild(a);
-      }
-      if (p.links?.repo) {
-        const a = document.createElement("a");
-        a.href = p.links.repo; a.target = "_blank"; a.rel = "noopener";
-        a.textContent = STRINGS[currentLang]?.labels?.code || "View Repository";
-        links.appendChild(a);
-      }
-      el.appendChild(links);
-
-      return el;
-    }
-
-    boot();
-  </script>
-</body>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

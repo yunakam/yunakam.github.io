@@ -1,0 +1,36 @@
+{
+  "en": {
+    "githubAlt": "Jump to GitHub",
+    "sections": {
+      "web-django": "Web Apps with Next.js & Django",
+      "android-kotlin": "Android Apps | Kotlin",
+      "android-flet": "Android Apps | Python flet",
+      "line": "Apps connected to LINE (chat application with LIFF)",
+      "deep-learning": "Deep Learning Projects",
+      "others": "Other Projects"
+    },
+    "labels": {
+      "live": "Live",
+      "code": "View Repository",
+      "notebook": "View Notebook",
+      "readme": "README"
+    }
+  },
+  "ja": {
+    "githubAlt": "GitHubへ移動",
+    "sections": {
+      "web-django": "ウェブアプリ | Next.js & Django",
+      "android-kotlin": "Androidアプリ | Kotlin",
+      "line": "LINE連携アプリ (LIFF)",
+      "android-flet": "Androidアプリ| Python flet",
+      "deep-learning": "深層学習プロジェクト",
+      "others": "その他のプロジェクト"
+    },
+    "labels": {
+      "live": "デモ",
+      "code": "リポジトリを見る",
+      "notebook": "ノートブックを見る",
+      "readme": "README"
+    }
+  }
+}
