@@ -95,6 +95,11 @@ function buildCard(p, featured) {
       );
     }
   }
+  if (p.links.competition) {
+    linkParts.push(
+      `<a href="${p.links.competition}" target="_blank" rel="noopener noreferrer" class="card-link">${icons.externalLink} ${t.labels["competition"]}</a>`,
+    );
+  }
 
   return `
 <article class="card${featured ? " card-featured" : ""}" data-slug="${p.slug}">

@@ -11,9 +11,10 @@
     },
     "labels": {
       "live": "Live",
-      "code": "View Repository",
-      "notebook": "View Notebook",
-      "readme": "README"
+      "code": "Repository",
+      "notebook": "Notebook",
+      "readme": "README",
+      "competition": "Competition"
     }
   },
   "ja": {
@@ -28,9 +29,10 @@
     },
     "labels": {
       "live": "デモ",
-      "code": "リポジトリを見る",
-      "notebook": "ノートブックを見る",
-      "readme": "README"
+      "code": "リポジトリ",
+      "notebook": "ノートブック",
+      "readme": "README",
+      "competition": "コンペティション"
     }
   }
 }

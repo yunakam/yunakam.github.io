@@ -53,7 +53,7 @@
       "en": "Manages notes by source media and promotes retention with multiple sorting functions",
       "ja": "ソース媒体ごとにノートを管理し、複数のソート機能でメモ内容の定着を促進"
     },
-    "media": { "type": "youtube", "id": "crHOj9WYVDY" },
+    "media": { "type": "youtube", "id": "fHPx8NaUJ3k" },
     "links": {
       "readme": {
         "en": "../../docs/time-capsule/README_en.md",
@@ -125,9 +125,21 @@
       "en": "Classification model with GRU and 1D convolutional layer.",
       "ja": "GRUと1次元畳み込みを利用した楽曲分類モデルの構築"
     },
+    "tags": [
+      "LSTM",
+      "GRU",
+      "Conv1D",
+      "Conv2D",
+      "MFCC",
+      "librosa",
+      "TensorFlow",
+      "Keras",
+      "Data Augmentation",
+      "Classification"
+    ],
     "media": {
       "type": "image",
-      "src": "assets/images/deep_learning_preview.png",
+      "src": "assets/images/preview_music-genre.png",
       "alt": {
         "en": "Spectrogram-based music genre classification preview",
         "ja": "スペクトログラムによる音楽ジャンル分類のプレビュー"
@@ -139,6 +151,29 @@
   },
 
   {
+    "category": "deep-learning",
+    "title": "CSIRO Image2Biomass",
+    "slug": "csiro-biomass",
+    "description": {
+      "en": "Regression task to predict biomass from pasture images.<br>Constructed a pipeline with two approaches: feature extraction using DINOv2/OpenCLIP + ridge regression, and an end-to-end regression model with DINOv3 as the backbone (the notebook below is an example of the former).",
+      "ja": "牧草画像から生物量を推定する回帰タスク。<br>「DINOv2・OpenCLIPによる特徴量抽出＋リッジ回帰」と、「DINOv3をバックボーンとするエンドツーエンドモデル」の2アプローチでパイプラインを構築（下のノートブックは前者の例）。"
+    },
+    "tags": ["DINOv2", "DINOv3", "OpenCLIP", "ViT", "Regression", "Kaggle"],
+    "media": {
+      "type": "image",
+      "src": "assets/images/preview_csiro-biomass.png",
+      "alt": {
+        "en": "Predicting contained target biomass from images",
+        "ja": "画像に含まれるターゲット生物量を予測"
+      }
+    },
+    "links": {
+      "notebook": "https://www.kaggle.com/code/yunakam907/csiro-dinov2-clip-features-dinov3-v2",
+      "competition": "https://www.kaggle.com/competitions/csiro-biomass/overview"
+    }
+  },
+
+  {
     "category": "others",
     "title": "F5-TTS Multi-Speaker Synthesis",
     "slug": "f5-tts-multi-speaker",
@@ -146,14 +181,14 @@
       "en": "Generates speech from text using the F5-TTS model. Implements speaker-specific voice assignment and pause insertion.",
       "ja": "スクリプトをF5-TTSモデルで音声変換。<br>話者別音声割り当て・ポーズ挿入を実装"
     },
-    "tags": ["F5-TTS", "TTS", "Audio Generation", "NLP", "Kaggle"],
+    "tags": ["F5-TTS", "TTS", "Audio Generation"],
     "media": {
       "type": "audio_demo",
       "samples": [
         {
           "label": {
-            "en": "Two men talking in turns",
-            "ja": "2人の会話"
+            "en": "Two men talking in turns followed by a narrator",
+            "ja": "2人の会話 + ナレーター"
           },
           "url": "https://github.com/yunakam/audio-book/raw/main/samples/sample1.mp3"
         },
