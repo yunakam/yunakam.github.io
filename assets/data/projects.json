@@ -1,11 +1,15 @@
 [
   {
-    "category": "web-django",
+    "category": "web",
     "title": "News Summarizer",
     "slug": "news-summarizer",
     "description": {
       "en": "Summarize an entered / extracted news article in the chosen language",
       "ja": "入力/抽出したニュース記事を好きな言語に要約"
+    },
+    "cardLabel": {
+      "en": "Next.js & Django",
+      "ja": "Next.js & Django"
     },
     "media": { "type": "youtube", "id": "CIh3eEZ6Zbw" },
     "links": {
@@ -14,13 +18,18 @@
   },
 
   {
-    "category": "android-kotlin",
+    "category": "android",
     "title": "Multi-lingual Translator (v2)",
     "slug": "multi-lingual-translator",
     "description": {
       "en": "Translates text into multiple languages of your choice.",
       "ja": "選択した複数言語にテキストを一括翻訳"
     },
+    "cardLabel": {
+      "en": "Kotlin",
+      "ja": "Kotlin"
+    },
+    "sortOrder": 0,
     "media": { "type": "youtube", "id": "xiIfQOlwI3M" },
     "links": {
       "readme": {
@@ -30,13 +39,18 @@
     }
   },
   {
-    "category": "android-kotlin",
+    "category": "android",
     "title": "Stamp Calculator",
     "slug": "stamp-calculator",
     "description": {
       "en": "Calculates combinations of stamps to reach the required amount",
       "ja": "入力された必要な金額に到達するよう、手持ちの切手から組み合わせを提案"
     },
+    "cardLabel": {
+      "en": "Kotlin",
+      "ja": "Kotlin"
+    },
+    "sortOrder": 0,
     "media": { "type": "youtube", "id": "2pB8I_kcDR4" },
     "links": {
       "readme": {
@@ -46,13 +60,18 @@
     }
   },
   {
-    "category": "android-kotlin",
+    "category": "android",
     "title": "Note Manager",
     "slug": "note-manager",
     "description": {
       "en": "Manages notes by source media and promotes retention with multiple sorting functions",
       "ja": "ソース媒体ごとにノートを管理し、複数のソート機能でメモ内容の定着を促進"
     },
+    "cardLabel": {
+      "en": "Kotlin",
+      "ja": "Kotlin"
+    },
+    "sortOrder": 0,
     "media": { "type": "youtube", "id": "fHPx8NaUJ3k" },
     "links": {
       "readme": {
@@ -63,13 +82,18 @@
   },
 
   {
-    "category": "android-flet",
+    "category": "android",
     "title": "Dietary Calculator",
     "slug": "dietary-calculator",
     "description": {
       "en": "Calculates your daily target of various nutrients.",
       "ja": "毎日の栄養素摂取目標値を計算"
     },
+    "cardLabel": {
+      "en": "Python-flet",
+      "ja": "Python-flet"
+    },
+    "sortOrder": 1,
     "media": { "type": "youtube", "id": "4mR3Hf1Vy9U" },
     "links": {
       "repo": "https://github.com/yunakam/dietary_calculator"
@@ -77,26 +101,36 @@
   },
 
   {
-    "category": "android-flet",
+    "category": "android",
     "title": "Yomou",
     "slug": "yomou",
     "description": {
       "en": "Helps you read books by the target date.",
       "ja": "読書計画をサポート"
     },
+    "cardLabel": {
+      "en": "Python-flet",
+      "ja": "Python-flet"
+    },
+    "sortOrder": 1,
     "media": { "type": "youtube", "id": "iDwYGWEvc2s" },
     "links": {
       "repo": "https://github.com/yunakam/yomou"
     }
   },
   {
-    "category": "android-flet",
+    "category": "android",
     "title": "Multi-lingual Translator (v1)",
     "slug": "multi-lingual-translator",
     "description": {
       "en": "Translates text into 1–4 different languages of your choice.",
       "ja": "選択した複数言語にテキストを一括翻訳"
     },
+    "cardLabel": {
+      "en": "Python-flet",
+      "ja": "Python-flet"
+    },
+    "sortOrder": 1,
     "media": { "type": "youtube", "id": "3Gk2kMy2-Ok" },
     "links": {
       "repo": "https://github.com/yunakam/polygloo"
@@ -110,6 +144,10 @@
     "description": {
       "en": "Event creation / management bot used in LINE talks",
       "ja": "LINEトーク内で使えるイベント作成/管理ボット"
+    },
+    "cardLabel": {
+      "en": "LIFF",
+      "ja": "LIFF"
     },
     "media": { "type": "youtube", "id": "k15nBefIyos" },
     "links": {
@@ -125,17 +163,19 @@
       "en": "Classification model with GRU and 1D convolutional layer.",
       "ja": "GRUと1次元畳み込みを利用した楽曲分類モデルの構築"
     },
+    "cardLabel": {
+      "en": "classification",
+      "ja": "classification"
+    },
     "tags": [
       "LSTM",
       "GRU",
       "Conv1D",
       "Conv2D",
       "MFCC",
-      "librosa",
       "TensorFlow",
       "Keras",
-      "Data Augmentation",
-      "Classification"
+      "Data Augmentation"
     ],
     "media": {
       "type": "image",
@@ -158,7 +198,11 @@
       "en": "Regression task to predict biomass from pasture images.<br>Constructed a pipeline with two approaches: feature extraction using DINOv2/OpenCLIP + ridge regression, and an end-to-end regression model with DINOv3 as the backbone (the notebook below is an example of the former).",
       "ja": "牧草画像から生物量を推定する回帰タスク。<br>「DINOv2・OpenCLIPによる特徴量抽出＋リッジ回帰」と、「DINOv3をバックボーンとするエンドツーエンドモデル」の2アプローチでパイプラインを構築（下のノートブックは前者の例）。"
     },
-    "tags": ["DINOv2", "DINOv3", "OpenCLIP", "ViT", "Regression", "Kaggle"],
+    "cardLabel": {
+      "en": "regression",
+      "ja": "regression"
+    },
+    "tags": ["Kaggle", "DINOv2", "DINOv3", "OpenCLIP", "ViT"],
     "media": {
       "type": "image",
       "src": "assets/images/preview_csiro-biomass.png",
@@ -181,7 +225,11 @@
       "en": "Generates speech from text using the F5-TTS model. Implements speaker-specific voice assignment and pause insertion.",
       "ja": "スクリプトをF5-TTSモデルで音声変換。<br>話者別音声割り当て・ポーズ挿入を実装"
     },
-    "tags": ["F5-TTS", "TTS", "Audio Generation"],
+    "cardLabel": {
+      "en": "TTS",
+      "ja": "TTS"
+    },
+    "tags": ["F5-TTS", "Audio Generation"],
     "media": {
       "type": "audio_demo",
       "samples": [

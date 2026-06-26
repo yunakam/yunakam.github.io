@@ -2,10 +2,9 @@
   "en": {
     "githubAlt": "Jump to GitHub",
     "sections": {
-      "web-django": "Web Apps with Next.js & Django",
-      "android-kotlin": "Android Apps | Kotlin",
-      "android-flet": "Android Apps | Python flet",
-      "line": "Apps connected to LINE (chat application with LIFF)",
+      "web": "Web Apps",
+      "android": "Android Apps",
+      "line": "Apps connected to LINE (chat application)",
       "deep-learning": "Deep Learning Projects",
       "others": "Other Projects"
     },
@@ -20,10 +19,9 @@
   "ja": {
     "githubAlt": "GitHubへ移動",
     "sections": {
-      "web-django": "ウェブアプリ | Next.js & Django",
-      "android-kotlin": "Androidアプリ | Kotlin",
-      "line": "LINE連携アプリ (LIFF)",
-      "android-flet": "Androidアプリ| Python flet",
+      "web": "ウェブアプリ",
+      "android": "Androidアプリ",
+      "line": "LINE連携アプリ",
       "deep-learning": "深層学習プロジェクト",
       "others": "その他のプロジェクト"
     },

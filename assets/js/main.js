@@ -26,11 +26,20 @@ function resolveAudioUrl(url) {
   return url;
 }
 
+function getLocalizedText(value, locale, fallback = "") {
+  if (typeof value === "string") return value;
+  if (value && typeof value === "object") {
+    return value[locale] || value.en || value["ja"] || fallback;
+  }
+  return fallback;
+}
+
 // ── Card builder ──────────────────────────────────────────────────────────────
 function buildCard(p, featured) {
   const t = strings[lang];
   const desc = p.description[lang] || p.description["en"];
-  const catLabel = (t.sections && t.sections[p.category]) || p.category;
+  const sectionLabel = (t.sections && t.sections[p.category]) || p.category;
+  const cardLabel = getLocalizedText(p.cardLabel, lang, sectionLabel);
 
   // Media
   let mediaPart = "";
@@ -105,7 +114,7 @@ function buildCard(p, featured) {
 <article class="card${featured ? " card-featured" : ""}" data-slug="${p.slug}">
 ${mediaPart}
 <div class="card-body">
-  <span class="card-category">${catLabel}</span>
+  <span class="card-category">${cardLabel}</span>
   <h3 class="card-title">${p.title}</h3>
   <p class="card-desc">${desc}</p>
   ${tagsPart}
@@ -115,14 +124,7 @@ ${linkParts.length ? `<footer class="card-footer">${linkParts.join("")}</footer>
 }
 
 // ── Render ────────────────────────────────────────────────────────────────────
-const CATEGORY_ORDER = [
-  "web-django",
-  "android-kotlin",
-  "android-flet",
-  "line",
-  "deep-learning",
-  "others",
-];
+const CATEGORY_ORDER = ["web", "android", "line", "deep-learning", "others"];
 
 let projectsData = [];
 
@@ -145,19 +147,22 @@ function renderProjects() {
   CATEGORY_ORDER.forEach((cat) => {
     const items = byCategory[cat];
     if (!items || !items.length) return;
-    const catLabel = (t.sections && t.sections[cat]) || cat;
+    const sectionLabel = (t.sections && t.sections[cat]) || cat;
+    const orderedItems = [...items].sort(
+      (a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0),
+    );
 
     let cards = "";
-    items.forEach((p, i) => {
-      cards += buildCard(p, i === 0 && items.length > 1);
+    orderedItems.forEach((p, i) => {
+      cards += buildCard(p, i === 0 && orderedItems.length > 1);
     });
 
     html += `
 <section class="section" aria-labelledby="cat-${cat}">
   <div class="section-header">
     <div class="section-accent" aria-hidden="true"></div>
-    <h2 class="section-title" id="cat-${cat}">${catLabel}</h2>
-    <span class="section-badge">${items.length}</span>
+    <h2 class="section-title" id="cat-${cat}">${sectionLabel}</h2>
+    <span class="section-badge">${orderedItems.length}</span>
   </div>
   <div class="bento-grid">${cards}</div>
 </section>`;
